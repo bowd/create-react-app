@@ -8,7 +8,7 @@
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/facebook/create-react-app/issues"
+    "url": "https://github.com/thomashorrobin/create-react-app-rust/issues"
   },
   "files": [
     "bin",
