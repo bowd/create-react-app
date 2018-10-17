@@ -66,8 +66,8 @@ const writeStatsJson = argv.indexOf('--stats') !== -1;
 
 const config = configFactory('production');
 
-const compileRust = require('./utils/rustUtils');
-compileRust();
+const rustUtils = require('./utils/rustUtils');
+rustUtils.build();
 
 // We require that you explictly set browsers and do not fall back to
 // browserslist defaults.
