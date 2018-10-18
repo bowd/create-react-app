@@ -207,7 +207,10 @@ module.exports = function(
   const rustUtils = require('./utils/rustUtils');
 
   if (!rustUtils.isRustInstalled()) {
-    rustUtils.installRust();
+    console.error(
+      'please install rust https://www.rust-lang.org/en-US/install.html'
+    );
+    return;
   }
 
   rustUtils.installRustWebAssemblyTools();
