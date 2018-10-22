@@ -43,6 +43,7 @@ const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
 const printHostingInstructions = require('react-dev-utils/printHostingInstructions');
 const FileSizeReporter = require('react-dev-utils/FileSizeReporter');
 const printBuildError = require('react-dev-utils/printBuildError');
+const rustUtils = require('./utils/rustUtils');
 
 const measureFileSizesBeforeBuild =
   FileSizeReporter.measureFileSizesBeforeBuild;
@@ -66,10 +67,7 @@ const writeStatsJson = argv.indexOf('--stats') !== -1;
 
 const config = configFactory('production');
 
-const rustUtils = require('./utils/rustUtils');
-rustUtils.build();
-
-// We require that you explictly set browsers and do not fall back to
+// We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
 const { checkBrowsers } = require('react-dev-utils/browsersHelper');
 checkBrowsers(paths.appPath, isInteractive)
@@ -84,6 +82,8 @@ checkBrowsers(paths.appPath, isInteractive)
     fs.emptyDirSync(paths.appBuild);
     // Merge with the public folder
     copyPublicFolder();
+    // compile Rust to wasm
+    rustUtils.build();
     // Start the webpack build
     return build(previousFileSizes);
   })
