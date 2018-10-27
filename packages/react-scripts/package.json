@@ -66,9 +66,16 @@
     "resolve": "1.10.0",
     "rust-native-wasm-loader": "^0.8.1",
     "sass-loader": "7.1.0",
+<<<<<<< HEAD
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.2",
     "url-loader": "1.1.2",
+=======
+    "style-loader": "0.23.0",
+    "terser-webpack-plugin": "1.1.0",
+    "toml-js": "0.0.8",
+    "url-loader": "1.1.1",
+>>>>>>> moved to using cargo init instead of copying Cargo.toml
     "wasm-loader": "^1.3.0",
     "webpack": "4.28.3",
     "webpack-dev-server": "3.1.14",
